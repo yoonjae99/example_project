@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main()
+{
+	int t,f,m,s,a,i;
+
+	i = 1;
+	s = 0;
+
+	printf("현재 시간 입력(0~23시):");
+	scanf("%d",&t);
+	printf("가족 인원 수 입력:");
+	scanf("%d",&f);
+
+	while(i<=f)
+	{
+		printf("%d번째 사람 나이 입력:",i);
+		scanf("%d",&a);
+
+		if(a<3)
+		{
+			m = 0;
+			printf("요금은 %d입니다.\n",m);
+			i++;
+			s = s + m;
+		}
+		else if(t<17)
+		{
+			if(3<=a&&a<=12||(65<=a))
+			{
+				m = 25000;
+				printf("요금은 %d입니다.\n",m);
+				i++;
+				s = s + m;
+			}
+			else
+			{
+				m=34000;
+				printf("요금은 %d입니다.\n",m);
+				i++;
+				s = s + m;
+			}
+		}
+		else
+		{
+			m=10000;
+			printf("요금은 %d입니다.\n",m);
+			i++;
+			s = s + m;
+		}
+	}
+	printf("가족의 요금은 %d입니다.\n",s);
+
+	return 0;
+}
